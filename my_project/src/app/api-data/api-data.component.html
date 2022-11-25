@@ -1,0 +1,9 @@
+<p>api-data works!</p>
+<!-- {{ apiResponse | json }} -->
+<ul>
+  <li>
+    <ng-container *ngFor="let list of apiResponse">
+      <p>{{ list.sport_name }}</p>
+    </ng-container>
+  </li>
+</ul>

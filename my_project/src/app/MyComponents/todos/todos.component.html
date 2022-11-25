@@ -16,12 +16,17 @@
       <button class="btn" (click)="onItemAdd()">add todo</button>
     </div>
     <div class="">
-      <ul
-        *ngFor="let item of todoItemArray"
-        class="mt-4"
-        [style.background-color]="item.color"
-      >
-        <li>{{ item.todoItem }}</li>
+      <ul>
+        <li
+          *ngFor="let item of todoItemArray; let i = index"
+          [style.background-color]="item.color"
+          class="mt-4 d-flex justify-content-around"
+        >
+          <div class="">{{ item.todoItem }}</div>
+          <div class="" style="cursor: pointer" (click)="deleteTodo(i)">
+            <i class="fa fa-trash-o"></i>
+          </div>
+        </li>
       </ul>
     </div>
   </div>

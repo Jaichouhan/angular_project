@@ -6,12 +6,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodosComponent } from './MyComponents/todos/todos.component';
 import { FormsModule } from '@angular/forms';
+import { ApiDataComponent } from './api-data/api-data.component';
+import { AllAPiService } from 'src/services/all-api.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
+    ApiDataComponent,
   ],
  
   imports: [
@@ -20,7 +23,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AllAPiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

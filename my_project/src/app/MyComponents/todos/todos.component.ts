@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from 'src/app/Toda';
-
 
 @Component({
   selector: 'app-todos',
@@ -16,10 +14,7 @@ todoObj: any = {
   todoItem: '',
   color:''
 }
-
-
-
-  
+local:any;
   constructor() { 
 
   }
@@ -32,13 +27,26 @@ todoObj: any = {
   }
  
   onItemAdd(){
-   this.todoItemArray.push(this.todoObj)
-   localStorage.setItem("todoList",JSON.stringify(this.todoItemArray))
-   this.todoObj={
-    todoItem: '',
-    color:''
-  }
+    if(!this.todoObj.todoItem){
+      alert("please enter a todo name")
+    }else if(!this.todoObj.color){
+      alert("please select a color name")
+    }else{
+      this.todoItemArray.push(this.todoObj)
+      localStorage.setItem("todoList",JSON.stringify(this.todoItemArray))
+      this.todoObj={
+       todoItem: '',
+       color:''
+     }
+    }
+  
   }
 
+  deleteTodo(index:any){
+    this.todoItemArray.splice(index,1)
+    localStorage.setItem("todoList",JSON.stringify(this.todoItemArray))
+    
+    
 
+  }
 }
