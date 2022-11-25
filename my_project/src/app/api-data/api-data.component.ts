@@ -8,7 +8,7 @@ import { AllAPiService } from 'src/services/all-api.service';
 })
 export class ApiDataComponent implements OnInit {
 
-
+  name="virendra";
   apiResponse:any;
   constructor(public __getApi:AllAPiService) {
     

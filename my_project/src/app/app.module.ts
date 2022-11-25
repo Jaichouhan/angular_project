@@ -8,6 +8,7 @@ import { TodosComponent } from './MyComponents/todos/todos.component';
 import { FormsModule } from '@angular/forms';
 import { ApiDataComponent } from './api-data/api-data.component';
 import { AllAPiService } from 'src/services/all-api.service';
+import { ChildComponent } from './api-data/child/child.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { AllAPiService } from 'src/services/all-api.service';
     AppComponent,
     TodosComponent,
     ApiDataComponent,
+    ChildComponent,
   ],
  
   imports: [
